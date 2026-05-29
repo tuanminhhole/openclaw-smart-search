@@ -62,7 +62,7 @@ if (!query) {
             (async () => {
                 const page = await ctx.newPage();
                 try {
-                    await page.goto('https://www.google.com/search?q=' + encodeURIComponent(query) + '&hl=vi', { waitUntil: 'domcontentloaded', timeout: 10000 });
+                    await page.goto('https://www.google.com/search?q=' + encodeURIComponent(query) + '&hl=vi', { waitUntil: 'domcontentloaded', timeout: 5000 });
                     const res = await page.evaluate(() => {
                         const list = [];
                         const links = Array.from(document.querySelectorAll('a h3'));
@@ -105,7 +105,7 @@ if (!query) {
             (async () => {
                 const page = await ctx.newPage();
                 try {
-                    await page.goto('https://www.bing.com/search?q=' + encodeURIComponent(query), { waitUntil: 'domcontentloaded', timeout: 10000 });
+                    await page.goto('https://www.bing.com/search?q=' + encodeURIComponent(query), { waitUntil: 'domcontentloaded', timeout: 5000 });
                     const res = await page.evaluate(() => {
                         const list = [];
                         const items = document.querySelectorAll('li.b_algo');
@@ -137,7 +137,7 @@ if (!query) {
             (async () => {
                 const page = await ctx.newPage();
                 try {
-                    await page.goto('https://html.duckduckgo.com/html/?q=' + encodeURIComponent(query), { waitUntil: 'domcontentloaded', timeout: 10000 });
+                    await page.goto('https://html.duckduckgo.com/html/?q=' + encodeURIComponent(query), { waitUntil: 'domcontentloaded', timeout: 5000 });
                     const res = await page.evaluate(() => {
                         const list = [];
                         const elements = document.querySelectorAll('.result');
